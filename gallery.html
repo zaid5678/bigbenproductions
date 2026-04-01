@@ -6,7 +6,7 @@
   <title>Gallery — Bigben Production</title>
   <meta name="description" content="View our portfolio of weddings, birthdays, podcast productions, 360 booths and LED display events.">
   <meta name="theme-color" content="#0b0c10">
-  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
 <header id="navbar" role="banner">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Bigben Production — home">
-      <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="60" height="60" style="height:48px;width:auto;">
+      <img src="assets/images/logo.jpg" alt="Bigben Production" class="logo-img" width="60" height="60" style="height:48px;width:auto;">
     </a>
     <nav aria-label="Primary navigation">
       <ul class="nav-links" role="list">
@@ -71,87 +71,55 @@
   <!-- GALLERY -->
   <section aria-labelledby="gallery-heading" style="padding:var(--space-section) 0;background:var(--clr-surface);">
     <div class="container">
-      <h2 id="gallery-heading" class="sr-only">Gallery images</h2>
+      <h2 id="gallery-heading" class="sr-only">Gallery</h2>
       <div class="gallery-columns" role="list" aria-label="Portfolio gallery">
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Wedding photography">
-          <div class="gallery-placeholder gallery-wedding" style="aspect-ratio:3/4;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Wedding</span>
-            </div>
-            <span class="gallery-label">Wedding</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="Wedding video 1">
+          <video src="assets/videos/wedding.mp4" autoplay muted loop playsinline
+            style="width:100%;display:block;" aria-label="Wedding coverage video"></video>
+          <span class="gallery-label">Wedding</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Birthday event photography">
-          <div class="gallery-placeholder gallery-birthday" style="aspect-ratio:4/3;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Birthday</span>
-            </div>
-            <span class="gallery-label">Birthday Event</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="360 booth video 1">
+          <video src="assets/videos/360booth.mp4" autoplay muted loop playsinline
+            style="width:100%;display:block;" aria-label="360 photo booth video"></video>
+          <span class="gallery-label">360 Booth</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Podcast production">
-          <div class="gallery-placeholder gallery-podcast" style="aspect-ratio:1/1;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Podcast</span>
-            </div>
-            <span class="gallery-label">Podcast</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="Birthday video 1">
+          <video src="assets/videos/birthday.mp4" autoplay muted loop playsinline
+            style="width:100%;display:block;" aria-label="Birthday event video"></video>
+          <span class="gallery-label">Birthday Event</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="360 photo booth">
-          <div class="gallery-placeholder gallery-booth" style="aspect-ratio:16/9;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">360 Booth</span>
-            </div>
-            <span class="gallery-label">360 Booth</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="Wedding video 2">
+          <video src="assets/videos/wedding2.mp4" autoplay muted loop playsinline
+            style="width:100%;display:block;" aria-label="Wedding coverage video 2"></video>
+          <span class="gallery-label">Wedding</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Wedding videography">
-          <div class="gallery-placeholder gallery-wedding" style="aspect-ratio:4/3;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Wedding</span>
-            </div>
-            <span class="gallery-label">Wedding</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="360 booth video 2">
+          <video src="assets/videos/360booth2.mp4" autoplay muted loop playsinline
+            style="width:100%;display:block;" aria-label="360 photo booth video 2"></video>
+          <span class="gallery-label">360 Booth</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Birthday portrait">
-          <div class="gallery-placeholder gallery-birthday" style="aspect-ratio:3/4;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Birthday</span>
-            </div>
-            <span class="gallery-label">Birthday Event</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="Birthday video 2">
+          <video src="assets/videos/birthday2.mp4" autoplay muted loop playsinline
+            style="width:100%;display:block;" aria-label="Birthday event video 2"></video>
+          <span class="gallery-label">Birthday Event</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Podcast recording session">
-          <div class="gallery-placeholder gallery-podcast" style="aspect-ratio:4/3;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Podcast</span>
-            </div>
-            <span class="gallery-label">Podcast</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="360 booth setup">
+          <img src="assets/images/360_booth.jpg" alt="360 photo booth setup" loading="lazy"
+            style="width:100%;display:block;">
+          <span class="gallery-label">360 Booth</span>
         </figure>
 
-        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Wedding details">
-          <div class="gallery-placeholder gallery-wedding" style="aspect-ratio:1/1;">
-            <div class="gallery-overlay" aria-hidden="true">
-              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span class="gallery-overlay-cat">Wedding</span>
-            </div>
-            <span class="gallery-label">Wedding</span>
-          </div>
+        <figure class="gallery-item reveal" role="listitem" aria-label="LED display installation">
+          <img src="assets/images/led.jpg" alt="LED display installation" loading="lazy"
+            style="width:100%;display:block;">
+          <span class="gallery-label">LED Display</span>
         </figure>
 
       </div>
@@ -176,7 +144,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-logo-wrap">
-        <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="120" height="56" loading="lazy" style="height:52px;width:auto;">
+        <img src="assets/images/logo.jpg" alt="Bigben Production" class="logo-img" width="120" height="56" loading="lazy" style="height:52px;width:auto;">
         <p class="footer-tagline">Premium photography, videography and experiential event production. UK-based, available nationwide.</p>
         <p class="footer-location">
           <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 9a3 3 0 100-6 3 3 0 000 6z"/><path d="M13 8c0 4-5 7-5 7S3 12 3 8a5 5 0 0110 0z"/></svg>
