@@ -2,19 +2,26 @@
    BIGBEN PRODUCTION — main.js
    ============================================================ */
 
+// ---------- Active Nav Link ----------
+(function () {
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+    if (link.getAttribute('href') === page) link.classList.add('nav-link--active');
+  });
+})();
+
+
 // ---------- Sticky Nav ----------
 const navbar = document.getElementById('navbar');
-
 function updateNav() {
   navbar.classList.toggle('nav-scrolled', window.scrollY > 70);
 }
-
 window.addEventListener('scroll', updateNav, { passive: true });
 updateNav();
 
 
 // ---------- Mobile Menu ----------
-const menuBtn   = document.getElementById('menuBtn');
+const menuBtn    = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 let menuOpen = false;
 
@@ -27,14 +34,8 @@ function toggleMenu(open) {
 }
 
 menuBtn.addEventListener('click', () => toggleMenu(!menuOpen));
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => toggleMenu(false));
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && menuOpen) toggleMenu(false);
-});
+mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && menuOpen) toggleMenu(false); });
 
 
 // ---------- Scroll Reveal ----------
@@ -52,7 +53,6 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ---------- Staggered Service Cards ----------
 const servicesGrid = document.querySelector('.services-grid');
-
 if (servicesGrid) {
   const cardObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
@@ -63,7 +63,6 @@ if (servicesGrid) {
       cardObserver.disconnect();
     }
   }, { threshold: 0.1 });
-
   cardObserver.observe(servicesGrid);
 }
 
@@ -72,41 +71,73 @@ if (servicesGrid) {
 function animateCounter(el, target, duration) {
   const start = performance.now();
   const suffix = el.dataset.suffix || '';
-
-  const tick = (timestamp) => {
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(eased * target) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
+  const tick = (ts) => {
+    const p = Math.min((ts - start) / duration, 1);
+    el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
   };
-
   requestAnimationFrame(tick);
 }
 
 const statsSection = document.querySelector('.stats-grid');
-
 if (statsSection) {
   const statsObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
-      document.querySelectorAll('[data-count]').forEach(el => {
-        animateCounter(el, parseInt(el.dataset.count), 1400);
-      });
+      document.querySelectorAll('[data-count]').forEach(el => animateCounter(el, parseInt(el.dataset.count), 1400));
       statsObserver.disconnect();
     }
   }, { threshold: 0.5 });
-
   statsObserver.observe(statsSection);
 }
 
 
-// ---------- Contact Form — loading state on submit ----------
+// ---------- Contact Form (Web3Forms) ----------
 const contactForm = document.getElementById('contactForm');
+const formSuccess  = document.getElementById('formSuccess');
+const formError    = document.getElementById('formError');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', () => {
-    const btn = contactForm.querySelector('[type="submit"]');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn      = contactForm.querySelector('[type="submit"]');
+    const original = btn.textContent;
     btn.textContent = 'Sending…';
-    btn.disabled = true;
-    // Native form POST to formsubmit.co takes over from here
+    btn.disabled    = true;
+    if (formError)   formError.classList.remove('is-visible');
+    if (formSuccess) formSuccess.classList.remove('is-visible');
+
+    const object = Object.fromEntries(new FormData(contactForm));
+
+    try {
+      const res    = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(object),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        if (formSuccess) formSuccess.classList.add('is-visible');
+        contactForm.reset();
+        btn.textContent = 'Sent!';
+        btn.classList.add('btn-success');
+        setTimeout(() => {
+          if (formSuccess) formSuccess.classList.remove('is-visible');
+          btn.textContent = original;
+          btn.disabled    = false;
+          btn.classList.remove('btn-success');
+        }, 5000);
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      if (formError) {
+        formError.textContent = 'Something went wrong — please try again or email us directly.';
+        formError.classList.add('is-visible');
+      }
+      btn.textContent = original;
+      btn.disabled    = false;
+    }
   });
 }

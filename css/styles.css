@@ -3,6 +3,160 @@
    Design tokens, custom components, animations
    ============================================================ */
 
+/* ---------- Screen-reader only ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ---------- Contact Two-Column ---------- */
+@media (min-width: 1024px) {
+  .contact-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+/* ---------- Active Nav Link ---------- */
+.nav-link--active { color: var(--clr-white) !important; }
+.nav-link--active::after { transform: scaleX(1) !important; }
+
+/* ---------- Page Hero (non-home pages) ---------- */
+.page-hero {
+  padding-top: calc(5rem + 3.5rem);
+  padding-bottom: 3.5rem;
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  background: radial-gradient(ellipse, rgba(40, 120, 212, 0.04) 0%, transparent 65%);
+  top: -20%;
+  right: -20%;
+  pointer-events: none;
+}
+.page-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--clr-white);
+  margin-top: 0.75rem;
+}
+.page-h1 em { font-style: italic; color: var(--clr-blue); }
+.page-sub {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--clr-muted);
+  margin-top: 1rem;
+  max-width: 36rem;
+  line-height: 1.75;
+}
+
+/* ---------- CTA Strip ---------- */
+.cta-strip {
+  background: var(--clr-elevated);
+  border-top: 1px solid var(--clr-border);
+  padding: 4.5rem 0;
+}
+.cta-strip-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .cta-strip-inner { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.cta-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--clr-white);
+  margin-top: 0.5rem;
+}
+.cta-h2 em { font-style: italic; color: var(--clr-blue); }
+
+/* ---------- Service Teasers (home) ---------- */
+.service-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--clr-border);
+  border: 1px solid var(--clr-border);
+}
+@media (min-width: 768px) { .service-teaser-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.service-teaser {
+  background: var(--clr-surface);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.service-teaser:hover { background: var(--clr-elevated); }
+.service-teaser:focus-visible { outline: 2px solid var(--clr-blue); outline-offset: -2px; }
+.service-teaser-icon { width: 32px; height: 32px; color: var(--clr-blue); margin-bottom: 0.75rem; }
+.service-teaser-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--clr-white); }
+.service-teaser-desc { font-family: var(--font-body); font-size: 0.8rem; color: var(--clr-muted); line-height: 1.55; }
+
+/* ---------- Gallery Preview Grid (home) ---------- */
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) { .gallery-preview-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- Featured Testimonial (home) ---------- */
+.testimonial-featured {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  padding: 2.5rem;
+  max-width: 48rem;
+  margin: 3.5rem auto 0;
+}
+
+/* ---------- Form Feedback ---------- */
+.form-feedback {
+  display: none;
+  padding: 1.1rem 1.5rem;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.form-feedback.is-visible { display: block; }
+.form-feedback--success {
+  background: rgba(26, 122, 60, 0.12);
+  border: 1px solid rgba(26, 122, 60, 0.3);
+  color: #6ee7a0;
+}
+.form-feedback--error {
+  background: rgba(185, 28, 28, 0.12);
+  border: 1px solid rgba(185, 28, 28, 0.3);
+  color: #fca5a5;
+}
+
 /* ---------- Design Tokens ---------- */
 :root {
   /* Colours */

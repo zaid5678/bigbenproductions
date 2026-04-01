@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Bigben Production</title>
+  <meta name="description" content="360 photo booth, LED display, wedding coverage, birthday events, podcast production and corporate events. UK-based.">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'bb-bg':'#0b0c10','bb-surface':'#111318','bb-elevated':'#191c25','bb-border':'#21252f','bb-blue':'#2878d4','bb-silver':'#b4bdc8','bb-white':'#ece9e3','bb-muted':'#7a818c'},fontFamily:{display:['"Cormorant Garamond"','serif'],body:['Outfit','sans-serif']}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-bb-bg text-bb-white font-body">
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header id="navbar" role="banner">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Bigben Production — home">
+      <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="60" height="60" style="height:48px;width:auto;">
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"    class="nav-link cursor-pointer">Home</a></li>
+        <li><a href="services.html" class="nav-link cursor-pointer">Services</a></li>
+        <li><a href="gallery.html"  class="nav-link cursor-pointer">Gallery</a></li>
+        <li><a href="about.html"    class="nav-link cursor-pointer">About</a></li>
+        <li><a href="contact.html"  class="nav-link cursor-pointer">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn-primary hidden md:inline-flex cursor-pointer">Book Now</a>
+      <button id="menuBtn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav>
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="index.html"    class="mobile-nav-link cursor-pointer">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link cursor-pointer">Services</a></li>
+      <li><a href="gallery.html"  class="mobile-nav-link cursor-pointer">Gallery</a></li>
+      <li><a href="about.html"    class="mobile-nav-link cursor-pointer">About</a></li>
+      <li><a href="contact.html"  class="mobile-nav-link cursor-pointer">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="contact.html" class="btn-primary cursor-pointer">Book Your Event</a></div>
+  </nav>
+  <p class="mobile-menu-footer">Photography &middot; Videography &middot; UK-Based</p>
+</div>
+
+<main id="main-content">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Services page header">
+    <div class="container">
+      <span class="section-tag">What We Offer</span>
+      <h1 class="page-h1">Our <em>Services</em></h1>
+      <p class="page-sub">Six ways we capture, illuminate, and elevate your most important occasions.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE CARDS -->
+  <section aria-labelledby="services-list-heading" style="padding:var(--space-section) 0;background:var(--clr-bg);">
+    <div class="container">
+      <h2 id="services-list-heading" class="sr-only">Full list of services</h2>
+      <div class="services-grid" aria-label="Service list">
+
+        <article class="service-card" aria-label="360 Photo Booth">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 12l-3-3-3 3"/><circle cx="12" cy="12" r="3"/><path d="M15 9V4h5"/></svg>
+          </div>
+          <h3 class="service-name">360 Photo Booth</h3>
+          <p class="service-desc">Step inside the circle. Our immersive 360° video booth creates viral-worthy slow-motion content your guests will be sharing for weeks. Perfect for weddings, birthdays, and corporate events.</p>
+          <a href="contact.html" class="service-link cursor-pointer">Enquire <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="service-card" aria-label="LED Display">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="7.5" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="16.5" cy="10" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3 class="service-name">LED Display</h3>
+          <p class="service-desc">Illuminate your event with stunning custom LED wall installations — fully programmable to match your theme, brand colours, and vision. Transforms any venue into something truly spectacular.</p>
+          <a href="contact.html" class="service-link cursor-pointer">Enquire <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="service-card" aria-label="Wedding Coverage">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><circle cx="8.5" cy="12" r="5.5"/><circle cx="15.5" cy="12" r="5.5"/><path d="M12 5v14"/></svg>
+          </div>
+          <h3 class="service-name">Wedding Coverage</h3>
+          <p class="service-desc">From vows to first dance, we tell your love story with editorial precision — cinematic highlight films and timeless photography that you'll treasure for generations.</p>
+          <a href="contact.html" class="service-link cursor-pointer">Enquire <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="service-card" aria-label="Birthday Events">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5" rx="1"/><path d="M12 7V3"/><path d="M8 3c0-1.5 1-2 2-2s2 1.5 2 3"/></svg>
+          </div>
+          <h3 class="service-name">Birthday Events</h3>
+          <p class="service-desc">Milestone celebrations deserve milestone coverage. Every toast, every laugh — captured beautifully so the memories last long after the party ends. 18ths, 21sts, 30ths, and beyond.</p>
+          <a href="contact.html" class="service-link cursor-pointer">Enquire <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="service-card" aria-label="Podcast Production">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3M8 22h8"/></svg>
+          </div>
+          <h3 class="service-name">Podcast Production</h3>
+          <p class="service-desc">Professional podcast recording with cinematic multi-camera B-roll, studio-quality lighting, and clean audio setup — perfect for YouTube, Spotify, and social media content.</p>
+          <a href="contact.html" class="service-link cursor-pointer">Enquire <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="service-card" aria-label="Corporate and Commercial">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg>
+          </div>
+          <h3 class="service-name">Corporate &amp; Commercial</h3>
+          <p class="service-desc">Product launches, award ceremonies, and brand activations — delivered with a premium creative eye and seamless on-the-day professionalism your brand deserves.</p>
+          <a href="contact.html" class="service-link cursor-pointer">Enquire <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" aria-label="Book your event">
+    <div class="container cta-strip-inner reveal">
+      <div>
+        <span class="section-tag">Ready to book?</span>
+        <h2 class="cta-h2">Let's Discuss<br><em>Your Event</em></h2>
+      </div>
+      <a href="contact.html" class="btn-primary cursor-pointer" style="flex-shrink:0;">Get In Touch</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo-wrap">
+        <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="120" height="56" loading="lazy" style="height:52px;width:auto;">
+        <p class="footer-tagline">Premium photography, videography and experiential event production. UK-based, available nationwide.</p>
+        <p class="footer-location">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 9a3 3 0 100-6 3 3 0 000 6z"/><path d="M13 8c0 4-5 7-5 7S3 12 3 8a5 5 0 0110 0z"/></svg>
+          United Kingdom
+        </p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h4 class="footer-col-title">Navigate</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html"    class="footer-link cursor-pointer">Home</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Services</a></li>
+          <li><a href="gallery.html"  class="footer-link cursor-pointer">Gallery</a></li>
+          <li><a href="about.html"    class="footer-link cursor-pointer">About</a></li>
+          <li><a href="contact.html"  class="footer-link cursor-pointer">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services navigation">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="services.html" class="footer-link cursor-pointer">360 Photo Booth</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">LED Display</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Wedding Coverage</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Birthday Events</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Podcast Production</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Corporate &amp; Commercial</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> Bigben Production. All rights reserved.</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/bigbenproduction1" class="social-link cursor-pointer" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@bigbenproduction1" class="social-link cursor-pointer" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

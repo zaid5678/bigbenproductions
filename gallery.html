@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Bigben Production</title>
+  <meta name="description" content="View our portfolio of weddings, birthdays, podcast productions, 360 booths and LED display events.">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'bb-bg':'#0b0c10','bb-surface':'#111318','bb-elevated':'#191c25','bb-border':'#21252f','bb-blue':'#2878d4','bb-silver':'#b4bdc8','bb-white':'#ece9e3','bb-muted':'#7a818c'},fontFamily:{display:['"Cormorant Garamond"','serif'],body:['Outfit','sans-serif']}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-bb-bg text-bb-white font-body">
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header id="navbar" role="banner">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Bigben Production — home">
+      <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="60" height="60" style="height:48px;width:auto;">
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"    class="nav-link cursor-pointer">Home</a></li>
+        <li><a href="services.html" class="nav-link cursor-pointer">Services</a></li>
+        <li><a href="gallery.html"  class="nav-link cursor-pointer">Gallery</a></li>
+        <li><a href="about.html"    class="nav-link cursor-pointer">About</a></li>
+        <li><a href="contact.html"  class="nav-link cursor-pointer">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn-primary hidden md:inline-flex cursor-pointer">Book Now</a>
+      <button id="menuBtn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav>
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="index.html"    class="mobile-nav-link cursor-pointer">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link cursor-pointer">Services</a></li>
+      <li><a href="gallery.html"  class="mobile-nav-link cursor-pointer">Gallery</a></li>
+      <li><a href="about.html"    class="mobile-nav-link cursor-pointer">About</a></li>
+      <li><a href="contact.html"  class="mobile-nav-link cursor-pointer">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="contact.html" class="btn-primary cursor-pointer">Book Your Event</a></div>
+  </nav>
+  <p class="mobile-menu-footer">Photography &middot; Videography &middot; UK-Based</p>
+</div>
+
+<main id="main-content">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Gallery page header">
+    <div class="container">
+      <span class="section-tag">Portfolio</span>
+      <h1 class="page-h1">Our <em>Work</em></h1>
+      <p class="page-sub">A selection of productions from across our portfolio — weddings, birthdays, podcasts, and experiential events.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section aria-labelledby="gallery-heading" style="padding:var(--space-section) 0;background:var(--clr-surface);">
+    <div class="container">
+      <h2 id="gallery-heading" class="sr-only">Gallery images</h2>
+      <div class="gallery-columns" role="list" aria-label="Portfolio gallery">
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Wedding photography">
+          <div class="gallery-placeholder gallery-wedding" style="aspect-ratio:3/4;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Wedding</span>
+            </div>
+            <span class="gallery-label">Wedding</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Birthday event photography">
+          <div class="gallery-placeholder gallery-birthday" style="aspect-ratio:4/3;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Birthday</span>
+            </div>
+            <span class="gallery-label">Birthday Event</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Podcast production">
+          <div class="gallery-placeholder gallery-podcast" style="aspect-ratio:1/1;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Podcast</span>
+            </div>
+            <span class="gallery-label">Podcast</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="360 photo booth">
+          <div class="gallery-placeholder gallery-booth" style="aspect-ratio:16/9;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">360 Booth</span>
+            </div>
+            <span class="gallery-label">360 Booth</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Wedding videography">
+          <div class="gallery-placeholder gallery-wedding" style="aspect-ratio:4/3;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Wedding</span>
+            </div>
+            <span class="gallery-label">Wedding</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Birthday portrait">
+          <div class="gallery-placeholder gallery-birthday" style="aspect-ratio:3/4;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Birthday</span>
+            </div>
+            <span class="gallery-label">Birthday Event</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Podcast recording session">
+          <div class="gallery-placeholder gallery-podcast" style="aspect-ratio:4/3;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Podcast</span>
+            </div>
+            <span class="gallery-label">Podcast</span>
+          </div>
+        </figure>
+
+        <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Wedding details">
+          <div class="gallery-placeholder gallery-wedding" style="aspect-ratio:1/1;">
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="gallery-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-overlay-cat">Wedding</span>
+            </div>
+            <span class="gallery-label">Wedding</span>
+          </div>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" aria-label="Book your event">
+    <div class="container cta-strip-inner reveal">
+      <div>
+        <span class="section-tag">Like what you see?</span>
+        <h2 class="cta-h2">Let's Shoot<br><em>Your Event Next</em></h2>
+      </div>
+      <a href="contact.html" class="btn-primary cursor-pointer" style="flex-shrink:0;">Book Your Event</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo-wrap">
+        <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="120" height="56" loading="lazy" style="height:52px;width:auto;">
+        <p class="footer-tagline">Premium photography, videography and experiential event production. UK-based, available nationwide.</p>
+        <p class="footer-location">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 9a3 3 0 100-6 3 3 0 000 6z"/><path d="M13 8c0 4-5 7-5 7S3 12 3 8a5 5 0 0110 0z"/></svg>
+          United Kingdom
+        </p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h4 class="footer-col-title">Navigate</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html"    class="footer-link cursor-pointer">Home</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Services</a></li>
+          <li><a href="gallery.html"  class="footer-link cursor-pointer">Gallery</a></li>
+          <li><a href="about.html"    class="footer-link cursor-pointer">About</a></li>
+          <li><a href="contact.html"  class="footer-link cursor-pointer">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services navigation">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="services.html" class="footer-link cursor-pointer">360 Photo Booth</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">LED Display</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Wedding Coverage</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Birthday Events</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Podcast Production</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Corporate &amp; Commercial</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> Bigben Production. All rights reserved.</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/bigbenproduction1" class="social-link cursor-pointer" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@bigbenproduction1" class="social-link cursor-pointer" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

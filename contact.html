@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Bigben Production</title>
+  <meta name="description" content="Get in touch with Bigben Production to book photography, videography, 360 booth or LED display for your event.">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'bb-bg':'#0b0c10','bb-surface':'#111318','bb-elevated':'#191c25','bb-border':'#21252f','bb-blue':'#2878d4','bb-silver':'#b4bdc8','bb-white':'#ece9e3','bb-muted':'#7a818c'},fontFamily:{display:['"Cormorant Garamond"','serif'],body:['Outfit','sans-serif']}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-bb-bg text-bb-white font-body">
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header id="navbar" role="banner">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Bigben Production — home">
+      <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="60" height="60" style="height:48px;width:auto;">
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"    class="nav-link cursor-pointer">Home</a></li>
+        <li><a href="services.html" class="nav-link cursor-pointer">Services</a></li>
+        <li><a href="gallery.html"  class="nav-link cursor-pointer">Gallery</a></li>
+        <li><a href="about.html"    class="nav-link cursor-pointer">About</a></li>
+        <li><a href="contact.html"  class="nav-link cursor-pointer">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn-primary hidden md:inline-flex cursor-pointer">Book Now</a>
+      <button id="menuBtn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav>
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="index.html"    class="mobile-nav-link cursor-pointer">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link cursor-pointer">Services</a></li>
+      <li><a href="gallery.html"  class="mobile-nav-link cursor-pointer">Gallery</a></li>
+      <li><a href="about.html"    class="mobile-nav-link cursor-pointer">About</a></li>
+      <li><a href="contact.html"  class="mobile-nav-link cursor-pointer">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="contact.html" class="btn-primary cursor-pointer">Book Your Event</a></div>
+  </nav>
+  <p class="mobile-menu-footer">Photography &middot; Videography &middot; UK-Based</p>
+</div>
+
+<main id="main-content">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Contact page header">
+    <div class="container">
+      <span class="section-tag">Get In Touch</span>
+      <h1 class="page-h1">Book Your <em>Event</em></h1>
+      <p class="page-sub">Tell us about your event and we'll get back to you as soon as possible to discuss how we can make it unforgettable.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section aria-labelledby="contact-form-heading" style="padding:var(--space-section) 0;background:var(--clr-bg);">
+    <div class="container">
+      <div class="contact-two-col" style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;">
+
+        <!-- Info column -->
+        <div class="reveal" style="max-width:36rem;">
+          <span class="section-tag">Contact Details</span>
+          <h2 id="contact-form-heading" class="about-h2" style="font-size:clamp(2rem,4vw,3rem);">Let's Create Something<br><em>Extraordinary</em></h2>
+          <p class="about-p">Whether you're planning your dream wedding, a milestone birthday, or your next podcast session — we'd love to hear from you. Fill in the form or email us directly and we'll be in touch shortly.</p>
+
+          <!-- Email -->
+          <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
+            <a href="mailto:zfkhan321@gmail.com" style="display:flex;align-items:center;gap:1rem;text-decoration:none;padding:1.25rem 1.5rem;background:var(--clr-surface);border:1px solid var(--clr-border);transition:border-color 0.2s;" class="reveal" aria-label="Email us">
+              <div style="width:40px;height:40px;background:var(--clr-blue-glow);border:1px solid var(--clr-blue);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--clr-blue);">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+              </div>
+              <div>
+                <p style="font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clr-muted);margin-bottom:0.2rem;">Email</p>
+                <p style="font-family:var(--font-body);font-size:0.9rem;color:var(--clr-white);">zfkhan321@gmail.com</p>
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/bigbenproduction1" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:1rem;text-decoration:none;padding:1.25rem 1.5rem;background:var(--clr-surface);border:1px solid var(--clr-border);transition:border-color 0.2s;" class="reveal" aria-label="Instagram">
+              <div style="width:40px;height:40px;background:var(--clr-blue-glow);border:1px solid var(--clr-blue);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--clr-blue);">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+              </div>
+              <div>
+                <p style="font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clr-muted);margin-bottom:0.2rem;">Instagram</p>
+                <p style="font-family:var(--font-body);font-size:0.9rem;color:var(--clr-white);">@bigbenproduction1</p>
+              </div>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@bigbenproduction1" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:1rem;text-decoration:none;padding:1.25rem 1.5rem;background:var(--clr-surface);border:1px solid var(--clr-border);transition:border-color 0.2s;" class="reveal" aria-label="TikTok">
+              <div style="width:40px;height:40px;background:var(--clr-blue-glow);border:1px solid var(--clr-blue);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--clr-blue);">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+              </div>
+              <div>
+                <p style="font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clr-muted);margin-bottom:0.2rem;">TikTok</p>
+                <p style="font-family:var(--font-body);font-size:0.9rem;color:var(--clr-white);">@bigbenproduction1</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <div class="reveal" style="max-width:600px;width:100%;">
+          <div id="formSuccess" class="form-feedback form-feedback--success" role="alert">
+            Message sent! We'll be in touch shortly.
+          </div>
+          <div id="formError" class="form-feedback form-feedback--error" role="alert"></div>
+
+          <form id="contactForm" class="contact-form" novalidate aria-label="Enquiry form">
+            <!-- Web3Forms access key — sends to zfkhan321@gmail.com -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="New enquiry from Bigben Production website">
+            <input type="hidden" name="from_name" value="Bigben Production Website">
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+44 7000 000000" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="event-type" class="form-label">Event Type <span aria-hidden="true">*</span></label>
+                <select id="event-type" name="event_type" class="form-select" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="birthday">Birthday Event</option>
+                  <option value="podcast">Podcast Production</option>
+                  <option value="360-booth">360 Photo Booth</option>
+                  <option value="led-display">LED Display</option>
+                  <option value="corporate">Corporate &amp; Commercial</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="event-date" class="form-label">Event Date</label>
+                <input type="date" id="event-date" name="event_date" class="form-input">
+              </div>
+              <div class="form-group full">
+                <label for="message" class="form-label">Tell Us About Your Event <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Share any details about your event — venue, guest count, specific requirements…" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-primary cursor-pointer">Send Enquiry</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo-wrap">
+        <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="120" height="56" loading="lazy" style="height:52px;width:auto;">
+        <p class="footer-tagline">Premium photography, videography and experiential event production. UK-based, available nationwide.</p>
+        <p class="footer-location">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 9a3 3 0 100-6 3 3 0 000 6z"/><path d="M13 8c0 4-5 7-5 7S3 12 3 8a5 5 0 0110 0z"/></svg>
+          United Kingdom
+        </p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h4 class="footer-col-title">Navigate</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html"    class="footer-link cursor-pointer">Home</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Services</a></li>
+          <li><a href="gallery.html"  class="footer-link cursor-pointer">Gallery</a></li>
+          <li><a href="about.html"    class="footer-link cursor-pointer">About</a></li>
+          <li><a href="contact.html"  class="footer-link cursor-pointer">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services navigation">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="services.html" class="footer-link cursor-pointer">360 Photo Booth</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">LED Display</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Wedding Coverage</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Birthday Events</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Podcast Production</a></li>
+          <li><a href="services.html" class="footer-link cursor-pointer">Corporate &amp; Commercial</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> Bigben Production. All rights reserved.</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/bigbenproduction1" class="social-link cursor-pointer" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@bigbenproduction1" class="social-link cursor-pointer" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
