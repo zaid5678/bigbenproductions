@@ -109,8 +109,8 @@ if (contactForm) {
 
     const object = Object.fromEntries(new FormData(contactForm));
 
-    // CC the submitter so they receive a copy of their enquiry
-    if (object.email) object.cc = object.email;
+    // Explicitly set reply-to and CC so submitter receives a copy
+    if (object.replyto) object.cc = object.replyto;
 
     try {
       const res    = await fetch('https://api.web3forms.com/submit', {
