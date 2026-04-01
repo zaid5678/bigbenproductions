@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Sent — Bigben Production</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clr-bg:    #0b0c10;
+      --clr-blue:  #2878d4;
+      --clr-white: #ece9e3;
+      --clr-muted: #7a818c;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      min-height: 100svh;
+      background: var(--clr-bg);
+      color: var(--clr-white);
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .icon {
+      width: 56px;
+      height: 56px;
+      border: 1.5px solid var(--clr-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-blue);
+      margin: 0 auto 1.75rem;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    h1 em { font-style: italic; color: var(--clr-blue); }
+    p {
+      font-size: 0.95rem;
+      color: var(--clr-muted);
+      line-height: 1.7;
+      max-width: 30rem;
+      margin: 0 auto 2rem;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      background: var(--clr-blue);
+      padding: 0.75rem 1.75rem;
+      border: 1px solid var(--clr-blue);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    a:hover { background: #5a9fe0; border-color: #5a9fe0; }
+  </style>
+</head>
+<body>
+  <div class="icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+  <h1>Message <em>Received.</em></h1>
+  <p>Thank you for getting in touch. We'll review your enquiry and get back to you as soon as possible.</p>
+  <a href="/">Back to Home</a>
+</body>
+</html>
