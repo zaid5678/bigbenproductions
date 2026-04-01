@@ -108,15 +108,19 @@ if (contactForm) {
     if (formSuccess) formSuccess.classList.remove('is-visible');
 
     const object = Object.fromEntries(new FormData(contactForm));
-
-    // Explicitly set reply-to and CC so submitter receives a copy
-    if (object.replyto) object.cc = object.replyto;
+    const submitterEmail = object.email;
 
     try {
+      // Send main email to Bigben, CC the submitter
+      const payload = {
+        ...object,
+        cc: submitterEmail,
+      };
+
       const res    = await fetch('https://api.web3forms.com/submit', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(object),
+        body:    JSON.stringify(payload),
       });
       const result = await res.json();
 
