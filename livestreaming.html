@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Streaming — Bigben Production</title>
+  <meta name="description" content="Professional live streaming services for weddings, birthdays, funerals, corporate events and more. UK-based, available nationwide.">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'bb-bg':'#0b0c10','bb-surface':'#111318','bb-elevated':'#191c25','bb-border':'#21252f','bb-blue':'#2878d4','bb-silver':'#b4bdc8','bb-white':'#ece9e3','bb-muted':'#7a818c'},fontFamily:{display:['"Cormorant Garamond"','serif'],body:['Outfit','sans-serif']}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Live dot pulse */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(220, 38, 38, 0.1);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      border-radius: 2px;
+      padding: 0.35rem 0.85rem;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f87171;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ef4444;
+      flex-shrink: 0;
+      animation: live-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes live-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .live-dot { animation: none; }
+    }
+
+    /* Platform cards */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--clr-border);
+      border: 1px solid var(--clr-border);
+      margin-top: 3rem;
+    }
+    @media (min-width: 640px) { .platform-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .platform-card {
+      background: var(--clr-surface);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .platform-card:hover { background: var(--clr-elevated); }
+    .platform-icon { width: 36px; height: 36px; color: var(--clr-blue); }
+    .platform-name {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-muted);
+    }
+
+    /* Feature list */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .feature-check {
+      width: 20px;
+      height: 20px;
+      color: var(--clr-blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .feature-text {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--clr-muted);
+      line-height: 1.6;
+    }
+    .feature-text strong {
+      color: var(--clr-silver);
+      font-weight: 500;
+    }
+
+    /* Use case cards */
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--clr-border);
+      border: 1px solid var(--clr-border);
+      margin-top: 3rem;
+    }
+    @media (min-width: 640px) { .usecase-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .usecase-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .usecase-card {
+      background: var(--clr-bg);
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .usecase-card:hover { background: var(--clr-elevated); }
+    .usecase-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--clr-blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .usecase-card:hover::after { transform: scaleX(1); }
+    .usecase-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--clr-border-hi);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      user-select: none;
+    }
+    .usecase-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--clr-white);
+      margin-bottom: 0.65rem;
+    }
+    .usecase-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      line-height: 1.7;
+    }
+
+    /* Setup visual */
+    .setup-visual {
+      background: var(--clr-elevated);
+      border: 1px solid var(--clr-border);
+      border-radius: 2px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .setup-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(40,120,212,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .setup-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .setup-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .setup-step:first-child { padding-top: 0; }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--clr-blue);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--clr-blue);
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--clr-white);
+      margin-bottom: 0.2rem;
+    }
+    .step-desc {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body class="bg-bb-bg text-bb-white font-body">
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header id="navbar" role="banner">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Bigben Production — home">
+      <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="60" height="60" style="height:48px;width:auto;">
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         class="nav-link cursor-pointer">Home</a></li>
+        <li><a href="services.html"      class="nav-link cursor-pointer">Services</a></li>
+        <li><a href="livestreaming.html" class="nav-link cursor-pointer">Live Streaming</a></li>
+        <li><a href="gallery.html"       class="nav-link cursor-pointer">Gallery</a></li>
+        <li><a href="about.html"         class="nav-link cursor-pointer">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn-primary hidden md:inline-flex cursor-pointer">Book Now</a>
+      <button id="menuBtn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav>
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="index.html"         class="mobile-nav-link cursor-pointer">Home</a></li>
+      <li><a href="services.html"      class="mobile-nav-link cursor-pointer">Services</a></li>
+      <li><a href="livestreaming.html" class="mobile-nav-link cursor-pointer">Live Streaming</a></li>
+      <li><a href="gallery.html"       class="mobile-nav-link cursor-pointer">Gallery</a></li>
+      <li><a href="about.html"         class="mobile-nav-link cursor-pointer">About</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="contact.html" class="btn-primary cursor-pointer">Book Your Event</a></div>
+  </nav>
+  <p class="mobile-menu-footer">Photography &middot; Videography &middot; UK-Based</p>
+</div>
+
+<main id="main-content">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Live Streaming page header">
+    <div class="container">
+      <div style="margin-bottom:1.25rem;" class="reveal-0">
+        <span class="live-badge"><span class="live-dot" aria-hidden="true"></span>Live</span>
+      </div>
+      <span class="section-tag reveal-1">Bigben Production</span>
+      <h1 class="page-h1 reveal-2">Professional<br><em>Live Streaming</em></h1>
+      <p class="page-sub reveal-3">Connect your event with audiences anywhere in the world — in real time, in stunning quality.</p>
+      <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem;" class="reveal-4">
+        <a href="contact.html" class="btn-primary cursor-pointer">Book a Stream</a>
+        <a href="#how-it-works" class="btn-ghost cursor-pointer">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO + FEATURES -->
+  <section aria-labelledby="ls-intro-heading" style="padding:var(--space-section) 0;background:var(--clr-bg);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr;gap:4rem;align-items:start;" class="about-grid">
+
+        <!-- Left: text -->
+        <div class="reveal">
+          <span class="section-tag">What We Provide</span>
+          <h2 id="ls-intro-heading" class="about-h2">Broadcast Your<br><em>Moment Live.</em></h2>
+          <p class="about-p">Whether loved ones can't make it in person or you want to extend your reach beyond the venue, our professional live streaming service ensures nobody misses a thing. We handle every technical detail — you stay present in the moment.</p>
+          <p class="about-p">From single-camera intimate ceremonies to multi-camera productions with graphics overlays, we tailor every stream to your event and audience.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <p class="feature-text"><strong>Multi-platform simultaneous streaming</strong> — broadcast to YouTube, Facebook, and custom RTMP endpoints at the same time</p>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <p class="feature-text"><strong>HD &amp; 4K quality</strong> — crystal-clear video so remote viewers feel like they're in the room</p>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <p class="feature-text"><strong>Professional audio capture</strong> — dedicated microphone setup, not just camera audio</p>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <p class="feature-text"><strong>Custom graphics &amp; lower thirds</strong> — branded overlays, name titles, and on-screen elements</p>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <p class="feature-text"><strong>Full recording included</strong> — receive a complete archive of the stream after the event</p>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <p class="feature-text"><strong>Dedicated on-site operator</strong> — a technician manages the stream throughout so nothing is left to chance</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: how it works -->
+        <div id="how-it-works" class="reveal">
+          <span class="section-tag">How It Works</span>
+          <h2 class="about-h2" style="font-size:clamp(1.75rem,3.5vw,2.75rem);">Simple Setup,<br><em>Flawless Broadcast.</em></h2>
+          <div class="setup-visual" style="margin-top:1.75rem;">
+            <div class="setup-step">
+              <div class="step-num">01</div>
+              <div>
+                <p class="step-title">Enquiry &amp; Brief</p>
+                <p class="step-desc">Tell us about your event — date, venue, platform preference, and expected viewer numbers. We'll recommend the right setup.</p>
+              </div>
+            </div>
+            <div class="setup-step">
+              <div class="step-num">02</div>
+              <div>
+                <p class="step-title">Venue Pre-Check</p>
+                <p class="step-desc">We assess internet connectivity and acoustics ahead of time to ensure a stable, high-quality stream on the day.</p>
+              </div>
+            </div>
+            <div class="setup-step">
+              <div class="step-num">03</div>
+              <div>
+                <p class="step-title">On-Site Setup</p>
+                <p class="step-desc">Our team arrives early to position cameras, run audio, configure the encoder, and run a full test stream before guests arrive.</p>
+              </div>
+            </div>
+            <div class="setup-step">
+              <div class="step-num">04</div>
+              <div>
+                <p class="step-title">Live Broadcast</p>
+                <p class="step-desc">We go live and monitor the stream throughout — adjusting cameras, audio levels, and graphics in real time.</p>
+              </div>
+            </div>
+            <div class="setup-step">
+              <div class="step-num">05</div>
+              <div>
+                <p class="step-title">Recording Delivery</p>
+                <p class="step-desc">A full high-resolution recording is delivered to you after the event, ready to share or archive.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section aria-labelledby="platforms-heading" style="padding:var(--space-section) 0;background:var(--clr-surface);">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="section-tag">Platforms</span>
+        <h2 id="platforms-heading" class="section-h2">Stream to Any<br><em>Platform</em></h2>
+      </header>
+      <div class="platform-grid reveal">
+
+        <!-- YouTube -->
+        <div class="platform-card">
+          <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="platform-name">YouTube</span>
+        </div>
+
+        <!-- Facebook -->
+        <div class="platform-card">
+          <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+          <span class="platform-name">Facebook</span>
+        </div>
+
+        <!-- Zoom -->
+        <div class="platform-card">
+          <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="14" height="10" rx="2"/>
+            <path d="M16 10l5-3v10l-5-3V10z"/>
+          </svg>
+          <span class="platform-name">Zoom</span>
+        </div>
+
+        <!-- Custom RTMP -->
+        <div class="platform-card">
+          <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+          </svg>
+          <span class="platform-name">Custom RTMP</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section aria-labelledby="usecases-heading" style="padding:var(--space-section) 0;background:var(--clr-bg);">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="section-tag">Use Cases</span>
+        <h2 id="usecases-heading" class="section-h2">Every Event<br><em>Deserves an Audience</em></h2>
+      </header>
+      <div class="usecase-grid">
+
+        <div class="usecase-card reveal">
+          <div class="usecase-number" aria-hidden="true">01</div>
+          <h3 class="usecase-title">Weddings</h3>
+          <p class="usecase-desc">Let family and friends who can't attend in person share in your special day — streamed live to wherever they are in the world.</p>
+        </div>
+
+        <div class="usecase-card reveal">
+          <div class="usecase-number" aria-hidden="true">02</div>
+          <h3 class="usecase-title">Funerals &amp; Memorial Services</h3>
+          <p class="usecase-desc">Help those who cannot travel to grieve and pay their respects together. We approach every memorial with the care and sensitivity it deserves.</p>
+        </div>
+
+        <div class="usecase-card reveal">
+          <div class="usecase-number" aria-hidden="true">03</div>
+          <h3 class="usecase-title">Birthday Celebrations</h3>
+          <p class="usecase-desc">Milestone birthdays streamed live so distant friends and family can watch the speeches, singing, and celebrations in real time.</p>
+        </div>
+
+        <div class="usecase-card reveal">
+          <div class="usecase-number" aria-hidden="true">04</div>
+          <h3 class="usecase-title">Church Services</h3>
+          <p class="usecase-desc">Regular services, christenings, and special ceremonies broadcast live to your congregation — wherever they are.</p>
+        </div>
+
+        <div class="usecase-card reveal">
+          <div class="usecase-number" aria-hidden="true">05</div>
+          <h3 class="usecase-title">Podcast &amp; Panel Events</h3>
+          <p class="usecase-desc">Stream your podcast recording or panel discussion live to grow your audience beyond the room — with professional production quality.</p>
+        </div>
+
+        <div class="usecase-card reveal">
+          <div class="usecase-number" aria-hidden="true">06</div>
+          <h3 class="usecase-title">Corporate &amp; Conferences</h3>
+          <p class="usecase-desc">Product launches, award ceremonies, and company-wide events broadcast live with branded graphics, multi-camera switching, and on-screen presentations.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" aria-label="Book live streaming">
+    <div class="container cta-strip-inner reveal">
+      <div>
+        <span class="section-tag">Ready to go live?</span>
+        <h2 class="cta-h2">Let's Broadcast<br><em>Your Event</em></h2>
+      </div>
+      <a href="contact.html" class="btn-primary cursor-pointer" style="flex-shrink:0;">Get a Quote</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo-wrap">
+        <img src="logo.jpg" alt="Bigben Production" class="logo-img" width="120" height="56" loading="lazy" style="height:52px;width:auto;">
+        <p class="footer-tagline">Premium photography, videography, live streaming and experiential event production. UK-based, available nationwide.</p>
+        <p class="footer-location">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 9a3 3 0 100-6 3 3 0 000 6z"/><path d="M13 8c0 4-5 7-5 7S3 12 3 8a5 5 0 0110 0z"/></svg>
+          United Kingdom
+        </p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h4 class="footer-col-title">Navigate</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html"         class="footer-link cursor-pointer">Home</a></li>
+          <li><a href="services.html"      class="footer-link cursor-pointer">Services</a></li>
+          <li><a href="livestreaming.html" class="footer-link cursor-pointer">Live Streaming</a></li>
+          <li><a href="gallery.html"       class="footer-link cursor-pointer">Gallery</a></li>
+          <li><a href="about.html"         class="footer-link cursor-pointer">About</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services navigation">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="services.html"      class="footer-link cursor-pointer">360 Photo Booth</a></li>
+          <li><a href="services.html"      class="footer-link cursor-pointer">LED Display</a></li>
+          <li><a href="services.html"      class="footer-link cursor-pointer">Wedding Coverage</a></li>
+          <li><a href="services.html"      class="footer-link cursor-pointer">Birthday Events</a></li>
+          <li><a href="services.html"      class="footer-link cursor-pointer">Podcast Production</a></li>
+          <li><a href="livestreaming.html" class="footer-link cursor-pointer">Live Streaming</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> Bigben Production. All rights reserved.</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/bigbenproduction1" class="social-link cursor-pointer" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@bigbenproduction1" class="social-link cursor-pointer" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
